@@ -1,0 +1,8 @@
+package com.motorola.edgenotes.domain.usecase
+
+import com.motorola.edgenotes.domain.model.Note
+import com.motorola.edgenotes.domain.repository.NoteRepository
+
+class DeleteNoteUseCase(private val repository: NoteRepository) {
+    suspend operator fun invoke(note: Note) = repository.deleteNote(note)
+}
